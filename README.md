@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 webpack.config.js
 
 ```js
-const Layout = 'vw'; // you can select rem or vw
+const layout = 'vw'; // you can select rem or vw
 ```
 
 #### todo

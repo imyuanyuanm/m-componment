@@ -41,8 +41,8 @@ const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // layout 
-const Layout = 'vw'; // you can select rem or vw
-const postcssConfig = require('../.postcssrc.js')[Layout].plugins();
+const layout = 'vw'; // you can select rem or vw
+const postcssConfig = require('../.postcssrc.js')[layout].plugins();
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
