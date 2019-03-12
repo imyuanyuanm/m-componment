@@ -11,3 +11,11 @@ webpack.config.js
 ```js
 const Layout = 'vw'; // you can select rem or vw
 ```
+
+#### todo
+[X] 布局
+[ ] 代理
+[ ] 骨架屏
+[ ] dll
+[ ] 状态管理
+[ ] 数据请求
