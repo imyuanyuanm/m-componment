@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const fs = require('fs');
@@ -70,8 +70,11 @@ module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
+  appDll: resolveApp('public/dll'),
+  appStatic: resolveApp('build/static'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
+  appPostcssrc: resolveApp('.postcssrc.js'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),

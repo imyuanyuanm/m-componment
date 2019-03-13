@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import { App } from './container';
 import * as serviceWorker from './serviceWorker';
 
 // if you wanna use VW, you can open below codes

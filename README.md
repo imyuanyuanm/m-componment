@@ -15,9 +15,11 @@ const layout = 'vw'; // you can select rem or vw
 ```
 
 #### todo
-- [X] 布局
-- [ ] 代理
-- [ ] 骨架屏
-- [ ] webpack优化
+- [X] 布局 vw rem
+- [X] webpack优化 dll
+- [X] 路由 按需加载
 - [ ] 状态管理
 - [ ] 数据请求
+- [ ] 代理
+- [ ] 骨架屏
+- [ ] 兼容测试
