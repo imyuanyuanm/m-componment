@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import AboutState from '../../store/About';
+
 import './About.scss';
+
 
 
 export class About extends Component {
