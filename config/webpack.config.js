@@ -111,6 +111,9 @@ module.exports = function (webpackEnv) {
   };
 
   return {
+    externals: {      // 外部引入，不需要打包
+      axios: 'axios',
+    },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
@@ -468,6 +471,9 @@ module.exports = function (webpackEnv) {
       ],
     },
     plugins: [
+      new webpack.ProvidePlugin({     // 在每个模块中都注入$
+        axios: 'axios',
+      }),
       // dllPlugin 动态链接库
       new webpack.DllReferencePlugin({
         manifest: path.resolve(__dirname, paths.appDll, 'manifest.json'),
