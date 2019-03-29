@@ -18,7 +18,7 @@ const layout = 'vw'; // you can select rem or vw
 - [X] 布局 vw rem
 - [X] webpack优化 dll
 - [X] 路由 按需加载
-- [ ] 状态管理  MobX
+- [X] 状态管理  MobX
 - [X] 数据请求 axios 外部引入
 - [ ] 骨架屏
 - [ ] 兼容测试

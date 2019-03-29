@@ -1,18 +1,13 @@
 import { observable, action } from "mobx";
 
-class AboutState {
-    @observable timer = 0;
+class AboutStore {
+    @observable searchText;
 
-    constructor() {
-        setInterval(() => {
-            this.timer += 1;
-        }, 1000);
-    }
-
-    @action.bound
-    reset() {
-        this.timer = 0;
+    @action
+    setSearchText = (searchText) => {
+        this.searchText = searchText
     }
 }
 
-export default AboutState;
+export const aboutStore = new AboutStore();
+

@@ -111,9 +111,6 @@ module.exports = function (webpackEnv) {
   };
 
   return {
-    externals: {      // 外部引入，不需要打包
-      axios: 'axios',
-    },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
     bail: isEnvProduction,
@@ -337,17 +334,15 @@ module.exports = function (webpackEnv) {
                 ),
 
                 plugins: [
-                  ["@babel/plugin-proposal-decorators", { "legacy": true }],
-                  ["@babel/plugin-proposal-class-properties", { "loose": true }],
-                  [
-                    require.resolve('babel-plugin-named-asset-import'),
-                    {
-                      loaderMap: {
-                        svg: {
-                          ReactComponent: '@svgr/webpack?-svgo,+ref![path]',
-                        },
+                  [require.resolve("@babel/plugin-proposal-decorators"), { legacy: true }],
+                  [require.resolve("@babel/plugin-proposal-class-properties"), { loose: true }],
+                  [require.resolve('babel-plugin-named-asset-import'), {
+                    loaderMap: {
+                      svg: {
+                        ReactComponent: '@svgr/webpack?-svgo,+ref![path]',
                       },
                     },
+                  },
                   ],
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -611,5 +606,8 @@ module.exports = function (webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
+    externals: {      // 外部引入，不需要打包
+      axios: 'axios',
+    },
   };
 };
