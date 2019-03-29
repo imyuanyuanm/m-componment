@@ -20,5 +20,5 @@ const layout = 'vw'; // you can select rem or vw
 - [X] 路由 按需加载
 - [X] 状态管理  MobX
 - [X] 数据请求 axios 外部引入
-- [ ] 骨架屏
+- [X] 骨架屏
 - [ ] 兼容测试

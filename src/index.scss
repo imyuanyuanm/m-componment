@@ -1,5 +1,8 @@
 @import './style/base.scss';
 
+html, body, #root{
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -14,11 +17,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.router-loade{
-  padding: 20px 30px;
-  display: inline-block;
-  background: #eee;
-  border-radius: 8px;
 }
