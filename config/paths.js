@@ -85,8 +85,9 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  // urlPublicPath: 'img.58cdn.com.cn/crop',    // 图片资源等 生产环境下添加前缀
+  urlPublicPath: '',
 };
-
 
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

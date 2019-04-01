@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import { observer, inject } from 'mobx-react';
 import './About.scss';
 
@@ -8,16 +7,8 @@ import './About.scss';
 @observer
 export class About extends Component {
     componentDidMount() {
-        // 数据请求
-        axios.get('http://apimanage.58corp.com/mock/59e42648f96afb201016d72c', {
-            params: { ID: 12345 }
-        }).then(function (response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.log(error);
-        }).then(function () {
-            // always executed
-        });
+        const { aboutStore } = this.props.store;
+        aboutStore.fetchData();
     }
     // 状态管理 mobx
     handleInputChanged = (event) => {
