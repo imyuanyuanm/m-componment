@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ```sh
  npm start
+ npm run dll
  npm run build
 ```
 
