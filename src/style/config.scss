@@ -1,0 +1,36 @@
+$border_1px_color:#000;
+.border_1px {
+    position: relative;
+    &:after {
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $border_1px_color;
+        transform: scale(1);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+    .border_1px{
+        &:after{
+            width: 200%;
+            height: 200%;
+            transform: scaleY(0.5);
+        }
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio:3){
+    .border_1px{
+        &:after{
+            width: 300%;
+            height: 300%;
+            transform: scaleY(0.33);
+        }
+    }
+}
