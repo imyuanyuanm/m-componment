@@ -8,7 +8,6 @@ class About extends Component {
         return (
             <div className="about">
                 <Link to='/test'>test</Link>
-                {/* <Grid /> */}
                 <RollList />
                 <div className="bg">
                     <div className="content">
