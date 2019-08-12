@@ -1,20 +1,17 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from "react-router-dom";
-import { lazy } from 'react';
-import { Provider } from "mobx-react";
-import { Skeleton } from './skeleton';
-import store from './store';
 
-const About = lazy(() => import('./container/About/About'));
-const Other = lazy(() => import('./container/Other/Other'));
+import About from './container/About/About';
+
+const Test = lazy(() => import( /* webpackChunkName: 'test' */'./container/Test/Test'));
+const Test1 = lazy(() => import( /* webpackChunkName: 'test1' */'./container/Test1/Test1'));
 
 export default () => {
-    return <Provider store={store}>
+    return <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-            <Suspense fallback={<Skeleton />}>
-                <Route path='/' exact component={About} />
-                <Route path='/other' exact component={Other} />
-            </Suspense>
+            <Route path='/' exact component={(props) => <About {...props} />} />
+            <Route path='/test' exact component={(props) => <Test {...props} />} />
+            <Route path='/test1' exact component={(props) => <Test1 {...props} />} />
         </Switch>
-    </Provider >
+    </Suspense >
 }

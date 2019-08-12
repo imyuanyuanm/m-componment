@@ -1,4 +1,4 @@
-$border_1px_color:#000;
+$border_1px_color:rgba(255,255,255,0);
 .border_1px {
     position: relative;
     &:after {
@@ -12,25 +12,27 @@ $border_1px_color:#000;
         transform: scale(1);
         transform-origin: 0 0;
         box-sizing: border-box;
-        border-radius: 10px;
     }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:2){
     .border_1px{
         &:after{
+            content: " ";
             width: 200%;
             height: 200%;
-            transform: scaleY(0.5);
+            transform: scale(0.5);
         }
     }
 }
 @media only screen and (-webkit-min-device-pixel-ratio:3){
     .border_1px{
         &:after{
+            content: " ";
             width: 300%;
             height: 300%;
-            transform: scaleY(0.33);
+            transform: scale(0.3333333333333333);
         }
     }
 }
+

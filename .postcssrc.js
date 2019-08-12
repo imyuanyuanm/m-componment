@@ -29,8 +29,10 @@ const vwConfig = {
     }),
     require("postcss-viewport-units"),
     require("cssnano")({
-      preset: "advanced",
+      keyframes: false,
+      // preset: "advanced",
       autoprefixer: false,
+      safe: true,
       "postcss-zindex": false
     }),
   ]

@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { observer, inject } from 'mobx-react';
+import { Link } from 'react-router-dom';
+import { RollList } from '../../component';
 import './About.scss';
 
-@inject('store')
-@observer
-export class About extends Component {
-    componentDidMount() {
-        const { aboutStore } = this.props.store;
-        aboutStore.fetchData();
-    }
-    // 状态管理 mobx
-    handleInputChanged = (event) => {
-        const { aboutStore } = this.props.store;
-        aboutStore.setSearchText(event.target.value);
-    }
+class About extends Component {
     render() {
-        const { aboutStore } = this.props.store;
         return (
             <div className="about">
-                this is About
-                <div><Link to='/other'>other</Link></div>
-                <input
-                    value={aboutStore && aboutStore.searchText}
-                    onChange={this.handleInputChanged}
-                />
-                <div>searchText:{aboutStore.searchText}</div>
+                <Link to='/test'>test</Link>
+                {/* <Grid /> */}
+                <RollList />
+                <div className="bg">
+                    <div className="content">
+                        <div className="circle-main">
+                            <p className="circle-one"></p>
+                            <p className="circle-two"></p>
+                            <p className="circle-three"></p>
+                            <p className="circle-four"></p>
+                            <p className="circle-five"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div className={`g-spinner-radar`}>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
             </div>
         );
     }

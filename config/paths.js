@@ -65,13 +65,15 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+// 项目名称
+const projectName = '';
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp('dist'),
   appDll: resolveApp('public/dll'),
-  appStatic: resolveApp('build/static'),
+  appStatic: resolveApp('dist/static'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appPostcssrc: resolveApp('.postcssrc.js'),
@@ -85,9 +87,9 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
-  // urlPublicPath: 'img.58cdn.com.cn/crop',    // 图片资源等 生产环境下添加前缀
-  urlPublicPath: '',
+  imgPublicPath: `//img.58cdn.com.cn/git/hrg-innovate/${projectName}/static/media/`,
 };
+
 
 
 module.exports.moduleFileExtensions = moduleFileExtensions;

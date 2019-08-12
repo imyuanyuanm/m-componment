@@ -1,8 +1,3 @@
 {
-    "extends": "react-app",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "legacyDecorators": true
-        }
-    }
+    "extends": "react-app"
 }

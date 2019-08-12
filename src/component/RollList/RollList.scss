@@ -1,0 +1,47 @@
+.roll{
+    .roll-list{
+        height: 80px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        .li-item{
+            position: absolute;
+            height: 80px;
+            line-height: 80px;
+            width: 100%;
+            padding: 0 20px;
+            border-radius: 4px;
+            top: auto;
+            font-size: 28px;
+            color: #F00027;
+            text-align: center;
+            span{
+                margin-right: 40px;
+            }
+        }
+        .li-item-pre{
+            top: -80px;
+            transition: 1s top ease;
+        }
+        .li-item-current{
+            top: 0;
+             transition: 1s top ease;
+        }
+        .li-item-next{
+            top: 80px;
+            transition: 1s top ease;
+        }
+    }
+    .roll-button{
+        position: absolute;
+        right: 20px;
+        top: -20px;
+        width: 150px;
+        height: 40px;
+        border-radius: 4px;
+        background:blue;
+        color: #fff;
+    }
+}
+
+

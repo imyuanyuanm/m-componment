@@ -1,0 +1,54 @@
+$navHeight:76px;
+
+.anchor{
+    height: $navHeight;  
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $navHeight;  
+    z-index: 1000;
+    font-size: 28px;
+    .nav{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: $navHeight;  
+        z-index: 1000;
+        font-size: 28px;
+        background: rgba(0,0,0,.8);
+        z-index: 2;
+        .active{
+            &:after{
+                content: '';
+                display: block;
+                width: 90px;
+                height: 4px;
+                bottom: 0;
+                margin: 0 auto;
+                background: #FF0808;
+                border-radius: 28px; 
+            }
+        }
+        a{
+            float: left;
+            height: $navHeight;
+            line-height: $navHeight;  
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+         &:after {
+            clear:both;
+            content:'.';
+            display:block;
+            width: 0;
+            height: 0;
+            visibility:hidden;
+        };
+    }
+}
+.hidden-anchor{
+    height: 0;
+    visibility: hidden;
+    z-index: -1;
+}

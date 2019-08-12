@@ -2,7 +2,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ```sh
  npm start
- npm run dll
  npm run build
 ```
 
@@ -19,7 +18,8 @@ const layout = 'vw'; // you can select rem or vw
 - [X] 布局 vw rem
 - [X] webpack优化 dll
 - [X] 路由 按需加载
-- [X] 状态管理  MobX
-- [X] 数据请求 axios 外部引入
-- [X] 骨架屏
+- [ ] 状态管理  MobX
+- [ ] 数据请求
+- [ ] 代理
+- [ ] 骨架屏
 - [ ] 兼容测试
