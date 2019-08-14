@@ -87,7 +87,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   // servedPath: getServedPath(resolveApp('package.json')),
-  servedPath: `//j1.58cdn.com.cn/git/hrg-innovate/${projectName}/`,
+  servedPath: `//j1.58cdn.com.cn/git/hrg-innovate/${projectName}`,
   imgPublicPath: `//img.58cdn.com.cn/git/hrg-innovate/${projectName}`,
 };
 

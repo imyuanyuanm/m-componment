@@ -75,7 +75,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "dll": "webpack --config config/webpack.config.dll.js"
+    "dll": "webpack --config config/webpack.config.dll.js",
+    "arthur": "npm run dll && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

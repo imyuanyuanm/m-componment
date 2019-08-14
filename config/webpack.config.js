@@ -25,6 +25,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
+const ReplaceCdnPlugin = require('./ReplaceCdnPlugin');
 
 // const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
@@ -386,6 +387,7 @@ module.exports = function (webpackEnv) {
       new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
       // This gives some necessary context to module not found errors, such as
       // the requesting resource.
+      new ReplaceCdnPlugin([{ source: 'index.html', original: '<link href="//j1', target: '<link href="//c' }]),
       new ModuleNotFoundPlugin(paths.appPath),
       new webpack.DefinePlugin(env.stringified),
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
