@@ -26,6 +26,7 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const ReplaceCdnPlugin = require('./ReplaceCdnPlugin');
+// const SecurityRegPlugin = require('./SecurityRegPlugin');
 
 // const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
@@ -256,6 +257,7 @@ module.exports = function (webpackEnv) {
                   'babel-preset-react-app/webpack-overrides'
                 ),
                 plugins: [
+                  ["import", { libraryName: "antd-mobile", style: "css" }], // `style: true` 会加载 less 文件
                   ["@babel/plugin-proposal-decorators", { "legacy": true }],
                   ["@babel/plugin-proposal-class-properties", { "loose": true }],
                   [
@@ -387,7 +389,7 @@ module.exports = function (webpackEnv) {
       new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
       // This gives some necessary context to module not found errors, such as
       // the requesting resource.
-      new ReplaceCdnPlugin([{ source: 'index.html', original: '<link href="//j1', target: '<link href="//c' }]),
+      isEnvProduction ? new ReplaceCdnPlugin([{ source: 'index.html', original: '<link href="//j1', target: '<link href="//c' }]) : undefined,
       new ModuleNotFoundPlugin(paths.appPath),
       new webpack.DefinePlugin(env.stringified),
       isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),

@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { RollList } from '../../component';
+import { MyDatePicker } from '../../component';
+import { Button } from 'antd-mobile';
+
 import './About.scss';
 
 class About extends Component {
+    state = {}
+    changeDate = (date) => {
+        this.setState({ date })
+    }
+    getShowDatePiker = (showDatePiker) => {
+        this.showDatePiker = showDatePiker;
+    }
+    showPiker = () => {
+        this.showDatePiker();
+    }
     render() {
         return (
             <div className="about">
-                <Link to='/test'>test</Link>
-                <RollList />
-                <div className="bg">
-                    <div className="content">
-                        <div className="circle-main">
-                            <p className="circle-one"></p>
-                            <p className="circle-two"></p>
-                            <p className="circle-three"></p>
-                            <p className="circle-four"></p>
-                            <p className="circle-five"></p>
-                        </div>
-                    </div>
-                </div>
-
-                <br />
-                <div className={`g-spinner-radar`}>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                </div>
+                <Button onClick={this.showPiker}>在职时间</Button>
+                <MyDatePicker
+                    changeDate={this.changeDate}
+                    getShowDatePiker={this.getShowDatePiker}
+                />
             </div>
         );
     }

@@ -1,0 +1,43 @@
+.my-date-picker{
+    width: 100%;
+    height: 550px;
+    position: fixed;
+    bottom: 0;
+    transition: .5s bottom;
+    .my-date-picker-head{
+        height: 76px;
+        line-height: 76px;
+        border: 1px solid #eee;
+        .action-box{
+            font-size: 32px;
+            .action-pre, .action-next{
+                padding: 0 20px;
+            }
+             .action-pre{
+                float: left;
+                text-align: left;
+            }
+            .action-next{
+                float: right;
+                text-align: right;
+            }
+        }
+        .date-picker-head-title{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            font-size: 32px;
+            text-align: center;
+            color: #999;
+        }
+    }
+    .am-picker{
+        display: flex;
+    }
+}
+.my-date-picker-hide{
+    width: 100%;
+    position: fixed;
+    bottom: -550px;
+    transition: .5s bottom;
+}

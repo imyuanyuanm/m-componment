@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import { App } from './container';
 import * as serviceWorker from './serviceWorker';
-import 'element-theme-default';
 
 // if you wanna use VW, you can open below codes
 // let hacks = require('viewport-units-buggyfill.hacks');
 // require('viewport-units-buggyfill').init({
 //   hacks: hacks
 // });
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
